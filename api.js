@@ -1,4 +1,4 @@
-const directory = 'http://localhost:3000/';
+const directory = 'https://multi-mask.herokuapp.com/';
 
 const save_button = document.querySelector('[name=mongo-save]');
 
