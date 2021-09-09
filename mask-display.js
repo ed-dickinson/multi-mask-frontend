@@ -18,7 +18,17 @@ maskSize[1] = maskSize[0] / (3/4);
 let rows = Math.floor(window.innerHeight / maskSize[1]);
 
 
+function fetchingState(on,mask) {
+  if (on === true) {
+    mask.classList.add('fetching');
+    mask.innerHTML = "<div class='loading-nodes'><div class='loading-node'></div><div class='loading-node'></div><div class='loading-node'></div></div>";
+  } else {
+    mask.classList.remove('fetching');
+    mask.innerHTML = "";
+  }
+}
 
+//load mask spaces
 
 let title_space = (across%2==1) ? 5 : 6;
 for (let i=0; i< (rows*across); i++) {
@@ -30,7 +40,7 @@ for (let i=0; i< (rows*across); i++) {
   mask.style.height = maskSize[1] + 'px';
   mask.style.top = maskSize[1]*Math.floor(i/across)/0.93 + 'px';
 
-
+  fetchingState(true, mask);
 
   displayArray.push(mask);
   maskDisplay.appendChild(mask);
@@ -71,8 +81,15 @@ function fillMasks(mask_store, random) {
       mask_store[j] = k
     }
   }
+  displayArray.forEach(dom => {
+    fetchingState(false, dom);
+  })
   mask_store.forEach(mask_in_store => {
+
     let i = mask_store.indexOf(mask_in_store);
+
+    // fetchingState(false, displayArray[i]);
+
     let display = displayArray[i];
     mapToCells(mask_in_store.map, displayArray[i]);
 
