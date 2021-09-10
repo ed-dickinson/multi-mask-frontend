@@ -218,7 +218,7 @@ div.title-inner, .mask-drawer-controls {z-index: 2;}
 
 /* LOADING */
 
-.fetching .loading-node {animation: loading 0.8s 0s infinite linear; height: calc(100% / 28 * 3); width: calc(100% / 21 * 3);  background-color: black; position: absolute;}
+.fetching .loading-node {animation: loading 0.8s 0s infinite step-start; height: calc(100% / 28 * 3); width: calc(100% / 21 * 3);  background-color: black; position: absolute;}
 .fetching .loading-node:nth-of-type(2) {background-color: dimgrey; animation-delay:-0.7s;}
 .fetching .loading-node:nth-of-type(3) {background-color: lightgrey; animation-delay:-0.6s;}
 

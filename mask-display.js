@@ -40,7 +40,9 @@ for (let i=0; i< (rows*across); i++) {
   mask.style.height = maskSize[1] + 'px';
   mask.style.top = maskSize[1]*Math.floor(i/across)/0.93 + 'px';
 
-  fetchingState(true, mask);
+  if (i < 4 * across) {
+    fetchingState(true, mask);
+  }
 
   displayArray.push(mask);
   maskDisplay.appendChild(mask);
