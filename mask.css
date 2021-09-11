@@ -59,6 +59,9 @@ position: static;
 .sub-title {font-family: neolithic; font-size: 2em; }
 
 .title  img {height: 100px;}
+
+
+
 .sub-title {font-family: neolithic; font-size: 2em; top: -30px; position: relative; filter:;}
 
 .title { top: -10px; position: relative;
@@ -231,4 +234,18 @@ div.title-inner, .mask-drawer-controls {z-index: 2;}
   62.5% {left: calc(100% / 21 * 4); top: calc(100% / 28 * 15);}
   75% {left: calc(100% / 21 * 3); top: calc(100% / 28 * 11);}
   87.5% {left: calc(100% / 21 * 4); top: calc(100% / 28 * 7);}
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 600px) {
+  .title  img {height: auto; width: 100%;}
+  .title-inner {width: 100%;}
+  .sub-title {display: none;}
+  .mask-display {
+    position: relative; top: -50px; margin: auto;
+    z-index: 1;
+  }
+  .title-and-controls-container {position: relative;}
+  .title-container {position: relative;}
 }
