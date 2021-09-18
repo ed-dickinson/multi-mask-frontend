@@ -9,6 +9,10 @@ let window_width = window.innerWidth;
 
 let max_mask_size = 95;
 
+if (window.innerWidth <= 500) {
+  max_mask_size = 70;
+}
+
 let across = (container_width - (container_width % max_mask_size)) / max_mask_size;
 
 
